@@ -1,4 +1,0 @@
-ODOO_RC=/etc/odoo/odoo-prod.conf
-VIRTUAL_HOST=odoo-test.indigoway.com
-LETSENCRYPT_HOST=odoo-test.indigoway.com
-LETSENCRYPT_EMAIL=hugo.rebelo@indigoway.com
