@@ -89,13 +89,13 @@ services:
       - PASSWORD=odoo
       - ODOO_RC=${ODOO_RC:-/etc/odoo/odoo.conf}
       - VIRTUAL_HOST=${VIRTUAL_HOST:-localhost}
-      - VIRTUAL_PORT=${VIRTUAL_PORT:-8074}
+      - VIRTUAL_PORT=${VIRTUAL_PORT:-8069}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST:-}
-      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL:-douglas.barbosa@indigoway.com}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL:-daniel.nery@godoo.com.br}
     expose:
-     - "8074"
+     - "8069"
      - "8071"
-     - "8075"
+     - "8072"
     volumes:
       # Filestore
       - ./odoo-web-data:/var/lib/odoo/
