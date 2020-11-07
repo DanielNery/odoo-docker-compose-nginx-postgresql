@@ -6,8 +6,8 @@ services:
         com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     container_name: nginx-web
     ports:
-      - "0.0.0.0:80:80"
-      - "0.0.0.0:443:443"
+      - 80:80
+      - 443:443
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - ./config/nginx/vhost.d:/etc/nginx/vhost.d
@@ -103,6 +103,8 @@ services:
       - ./config/odoo:/etc/odoo
       # Addons 
       - ./addons:/mnt/extra-addons
+    ports:
+      - "8069:8069"
 
 
   db:
