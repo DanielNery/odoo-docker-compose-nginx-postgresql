@@ -39,24 +39,24 @@ services:
         max-size: "2m"
         max-file: "10"
 
-  # nginx-letsencrypt:
-  #   image: jrcs/letsencrypt-nginx-proxy-companion
-  #   container_name: nginx-letsencrypt
-  #   restart: always
-  #   volumes:
-  #     - ./config/nginx/conf.d:/etc/nginx/conf.d
-  #     - ./config/nginx/vhost.d:/etc/nginx/vhost.d
-  #     - ./config/nginx/html:/usr/share/nginx/html
-  #     - ./config/nginx/certs:/etc/nginx/certs:rw
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #   environment:
-  #     NGINX_DOCKER_GEN_CONTAINER: docker-gen
-  #     NGINX_PROXY_CONTAINER: nginx-web
-  #   logging:
-  #     driver: json-file
-  #     options:
-  #       max-size: "2m"
-  #       max-file: "10"
+  nginx-letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: nginx-letsencrypt
+    restart: always
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - ./config/nginx/vhost.d:/etc/nginx/vhost.d
+      - ./config/nginx/html:/usr/share/nginx/html
+      - ./config/nginx/certs:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      NGINX_DOCKER_GEN_CONTAINER: docker-gen
+      NGINX_PROXY_CONTAINER: nginx-web
+    logging:
+      driver: json-file
+      options:
+        max-size: "2m"
+        max-file: "10"
 
   odoo:
     image: odoo:14.0
@@ -73,8 +73,6 @@ services:
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL:-daniel.nery@godoo.com.br}
     expose:
      - "8069"
-     - "8071"
-     - "8072"
     volumes:
       # Filestore
       - ./odoo-web-data:/var/lib/odoo/
