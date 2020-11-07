@@ -63,7 +63,7 @@ services:
 
 
   odoo:
-    image: indigoway/godoo-odoo:12.0.2
+    image: odoo:14.0
     restart: always
     depends_on:
       - db
