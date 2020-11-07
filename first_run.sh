@@ -5,8 +5,8 @@ set -e
 #  Script     : first_run.sh
 #  Author     : Hugo Rebelo <hugo.rebelo@indigoway.com>
 #  Date       : 2018-10-26
-#  Last Edited: 2019-01-21, Douglas Lambertinny
-#  Description: Setup Odoo development environment
+#  Last Edited: 2019-01-21, Hugo Rebelo
+#  Description: Setup Moveon Odoo development environment
 ##############################################################
 
 source ./include_utils.sh
@@ -64,7 +64,7 @@ install_docker() {
 
 install_submodules() {
 	INFO "Installing submodules..."
-	git submodule update --init --recursive --remote  -j 8
+	git submodule update --init --recursive --remote
 }
 
 fix_permissions(){

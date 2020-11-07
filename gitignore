@@ -1,0 +1,12 @@
+odoo-web-data/*
+odoo-db-data/* 
+.env
+docker-compose.override.yml
+config/odoo/odoo.conf
+*.pyc
+config/*
+.vscode/
+.gitignore
+README.md
+env-sample
+include_utils.sh
