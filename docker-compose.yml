@@ -2,6 +2,8 @@ version: '3.7'
 services:
   nginx-web:
     image: nginx
+    depends_on:
+      - odoo
     labels:
         com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     container_name: nginx-web
