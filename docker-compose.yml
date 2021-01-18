@@ -28,6 +28,5 @@ services:
         - ./certbot/conf:/etc/letsencrypt
         - ./certbot/logs:/var/log/letsencrypt
         - ./certbot/data:/var/www/html
-
 volumes:
     odoo-web-data:
