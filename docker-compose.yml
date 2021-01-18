@@ -23,7 +23,7 @@ services:
   certbot:
     container_name: certbot
     image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/var/www/html -- email danielpontesnery@gmail.com --agree-tos --no-eff-email -d localhost -d localhost
+    #command: certonly --webroot --webroot-path=/var/www/html -- email danielpontesnery@gmail.com --agree-tos --no-eff-email -d localhost -d localhost
     volumes:
         - ./certbot/conf:/etc/letsencrypt
         - ./certbot/logs:/var/log/letsencrypt
