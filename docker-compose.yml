@@ -1,33 +1,22 @@
-version: '3'
+version: '2'
 services:
-  odoo:
-    container_name: odoo
-    image: odoo:latest
-    volumes:
-        - ./addons-extra:/mnt/extra-addons
-        - ./etc/odoo/config:/etc/odoo
-        - odoo-web-data:/var/lib/odoo
-    ports:
-        - "8069:8069"
-  nginx:
-    container_name: nginx
-    image: nginx:latest
-    restart: unless-stopped
-    ports:
-        - 80:80
-        - 443:443
-    volumes:
-        - ./nginx/conf:/etc/nginx/conf.d
-        - ./certbot/conf:/etc/nginx/ssl
-        - ./certbot/data:/var/www/html
-  certbot:
-    container_name: certbot
-    image: certbot/certbot:latest
-    #command: certonly --webroot --webroot-path=/var/www/html -- email danielpontesnery@gmail.com --agree-tos --no-eff-email -d localhost -d localhost
-    volumes:
-        - ./certbot/conf:/etc/letsencrypt
-        - ./certbot/logs:/var/log/letsencrypt
-        - ./certbot/data:/var/www/html
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+    restart: always             # run as a service  
 
-volumes:
-    odoo-web-data:
+  odoo11:
+    image: odoo:latest
+    depends_on:
+      - db
+    ports:
+      - "8070:8069"
+    tty: true
+    command: -- --dev=reload
+#    command: odoo scaffold /mnt/extra-addons/test_module
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
+    restart: always             # run as a service  
