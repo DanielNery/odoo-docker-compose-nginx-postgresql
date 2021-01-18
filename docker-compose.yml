@@ -18,5 +18,15 @@ services:
         - 443:443
     volumes:
         - ./nginx/conf:/etc/nginx/conf.d
+        - ./certbot/conf:/etc/nginx/ssl
+        - ./certbot/data:/var/www/html
+  certbot:
+    container_name: certbot
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/var/www/html
+    volumes:
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/logs:/var/log/letsencrypt
+        - ./certbot/data:/var/www/html
 volumes:
     odoo-web-data:
