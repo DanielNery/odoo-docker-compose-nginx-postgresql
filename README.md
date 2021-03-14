@@ -3,7 +3,7 @@
 
 ## Odoo conf
 
-<code>[options]
+<code>[options]\n
 ; Modules Config
 addons_path = /mnt/extra-addons
 ; Security Config
