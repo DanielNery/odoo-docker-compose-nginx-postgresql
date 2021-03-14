@@ -5,5 +5,5 @@
 
 # Commands
 
-sudo docker-compose up -d
-sudo docker-compose stop odoo && sudo docker-compose run --rm odoo odoo -c /etc/odoo/odoo.conf -i base
+<p>sudo docker-compose up -d</p>
+<p>sudo docker-compose stop odoo && sudo docker-compose run --rm odoo odoo -c /etc/odoo/odoo.conf -i base</p>
