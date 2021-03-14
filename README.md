@@ -3,7 +3,7 @@
 
 ## Odoo conf
 
-[options]
+<code>[options]
 ; Modules Config
 addons_path = /mnt/extra-addons
 ; Security Config
@@ -61,7 +61,7 @@ without_demo = True
 ;workers = 5
 xmlrpc = True
 xmlrpc_port = 8069
-xmlrpc_interface = 0.0.0.0
+xmlrpc_interface = 0.0.0.0</code>
 
 
 
