@@ -2,7 +2,6 @@ odoo-web-data/*
 odoo-db-data/* 
 .env
 docker-compose.override.yml
-config/odoo/odoo.conf
 *.pyc
 .vscode/
 README.md
