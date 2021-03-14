@@ -4,8 +4,8 @@ services:
         container_name: odoo
         image: odoo:latest
         volumes:
-            - ./addons-extra:/mnt/extra-addons
-            - ./odoo:/etc/odoo
+            - ./addons:/mnt/extra-addons
+            - ./config/odoo:/etc/odoo
             - odoo-web-data:/var/lib/odoo
         ports:
             - "8069:8069"
@@ -17,15 +17,7 @@ services:
             - 80:80
             - 443:443
         volumes:
-            - ./nginx/conf:/etc/nginx/conf.d
-        # certbot:
-        #     container_name: certbot
-        #     image: certbot/certbot:latest
-        #     command: certonly --webroot --webroot-path=/var/www/html -- email youremail@mail.com --agree-tos --no-eff-email -d domain.com -d www.domain.com
-        # volumes:
-        #     - ./certbot/conf:/etc/letsencrypt
-        #     - ./certbot/logs:/var/log/letsencrypt
-        #     - ./certbot/data:/var/www/html
+            - ./config/nginx/conf:/etc/nginx/conf.d
 
     db:
       image: postgres:13
