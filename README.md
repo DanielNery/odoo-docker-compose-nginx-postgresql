@@ -1,4 +1,3 @@
-# Using Odoo + Postgresql + Nginx with Docker-compose
 
 > 🔥 Composição Odoo ERP, PostgreSQL e Nginx para auxiliar o uso das aplicações de forma simples. 
 
