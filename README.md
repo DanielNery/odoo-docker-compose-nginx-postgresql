@@ -1,4 +1,4 @@
-# Odoo ERP, PostgreSQL and Nginx Compose 🔥 
+# Odoo ERP, PostgreSQL and Nginx Compose 🔥 🇧🇷
 
   + Odoo
   + PostgreSQL
@@ -18,25 +18,25 @@
 
 ### Linux Basic Commands 🐧
 
-` sudo apt update && sudo apt upgrade -y `
-` sudo apt install docker docker-compose -y `
-` git clone https://github.com/DanielNery/odoo-docker-compose-nginx-postgresql.git `
-` cd odoo-docker-compose-nginx-postgresql `
-` sudo docker-compose up -d `
+` sudo apt update && sudo apt upgrade -y ` <br/>
+` sudo apt install docker docker-compose -y ` <br/>
+` git clone https://github.com/DanielNery/odoo-docker-compose-nginx-postgresql.git ` <br/>
+` cd odoo-docker-compose-nginx-postgresql ` <br/>
+` sudo docker-compose up -d ` <br/>
 
 ### Windowns or Mac Tutorial 🍎
 
   + Install Docker Desktop https://www.docker.com/products/docker-desktop/
   
-    ` git clone https://github.com/DanielNery/odoo-docker-compose-nginx-postgresql.git `
-    ` cd odoo-docker-compose-nginx-postgresql `
-    ` docker-compose up -d `
+    ` git clone https://github.com/DanielNery/odoo-docker-compose-nginx-postgresql.git ` <br/>
+    ` cd odoo-docker-compose-nginx-postgresql ` <br/>
+    ` docker-compose up -d ` <br/>
 
 
 ### Update or custom modules 🍺
   
   `docker-compose stop odoo && sudo docker-compose run --rm odoo odoo -c /etc/odoo/odoo.conf -u your_module 
-  --stop-after-init && docker-compose start odoo`
+  --stop-after-init && docker-compose start odoo` <br/>
   
 ### Contact 📞
   
