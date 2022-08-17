@@ -9,6 +9,9 @@ services:
             - odoo-web-data:/var/lib/odoo
         ports:
             - "8069:8069"
+        depends_on:
+            - "db"
+            - "nginx"
     nginx:
         container_name: nginx
         image: nginx:latest
