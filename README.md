@@ -6,7 +6,8 @@
   + Installations and use simplified ❤
 
 ## Odoo ERP 🖥️
-<img src="./project-images/project-image.png">
+![project-image](https://user-images.githubusercontent.com/59855397/216739166-c91ef374-50d4-4b9e-bfb4-987954f5f0f2.png)
+
 
 ##  Documentation 📜
 
