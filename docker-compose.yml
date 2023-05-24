@@ -3,6 +3,7 @@ services:
     odoo:
         container_name: odoo
         image: odoo:latest
+        restart: always
         volumes:
             - ./addons:/mnt/extra-addons
             - ./config/odoo:/etc/odoo
@@ -15,7 +16,7 @@ services:
     nginx:
         container_name: nginx
         image: nginx:latest
-        restart: unless-stopped
+        restart: always
         ports:
             - 80:80
             - 443:443
