@@ -25,6 +25,9 @@
     sudo docker-compose up -d
     # Obs: 'd' is from detached
 
+    # Allow permissions to read filestore
+    sudo chmod 777 ./odoo-web-data
+
     # Down containers (Alert: This deletes all config your containers)
     sudo docker-compose down
     
