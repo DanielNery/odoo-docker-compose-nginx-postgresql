@@ -7,7 +7,7 @@ services:
         volumes:
             - ./addons:/mnt/extra-addons
             - ./config/odoo:/etc/odoo
-            - odoo-web-data:/var/lib/odoo
+            - ./odoo-web-data:/var/lib/odoo
         ports:
             - "8069:8069"
         depends_on:
