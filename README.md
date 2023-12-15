@@ -3,6 +3,7 @@
   + Odoo
   + PostgreSQL
   + Nginx 
+  + Certbot Letsencrypt SSL
   + Installations and use simplified ❤
 
 ## Odoo ERP 🖥️
@@ -11,7 +12,19 @@
 
 ### Clone this repository
 
-    git clone https://github.com/DanielNery/odoo-docker-compose-nginx-postgresql.git --branch=master
+    git clone --recurse-submodules --remote-submodules https://github.com/DanielNery/odoo-docker-compose-nginx-postgresql.git --branch=master
+
+### Steps To Live
+
+    # On odoo-docker-compose-nginx-postgresql directory
+    sudo mkdir ./odoo-web-data && sudo mkdir ./addons && sudo chmod -R 777 ./addons &&  sudo chmod -R 777 ./odoo-web-data && sudo docker-compose up -d
+
+    # Check container id from odoo
+    sudo docker ps
+
+    # Copy default addons (Optional)
+    sudo docker cp <odoo_container_id>:/usr/lib/python3/dist-packages/odoo/addons ./addons  
+
 
 ### Commands
 
@@ -20,7 +33,6 @@
 
     # Kill process running on port of interest
     sudo service apache2 stop
-
     # Containers Up
     sudo docker-compose up -d
     # Obs: 'd' is from detached

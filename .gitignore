@@ -7,3 +7,5 @@ docker-compose.override.yml
 README.md
 env-sample
 include_utils.sh
+addons/addons
+certbot/*
