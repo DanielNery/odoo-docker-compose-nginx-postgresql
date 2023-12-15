@@ -88,33 +88,33 @@
 
 ### Nginx SSL config example
 
-server {
-    listen 443 ssl;
-    server_name domain.com.br;
+  server {
+      listen 443 ssl;
+      server_name domain.com.br;
 
-    ssl_certificate     /etc/letsencrypt/live/domain.com.br/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/domain.com.br/privkey.pem;
+      ssl_certificate     /etc/letsencrypt/live/domain.com.br/fullchain.pem;
+      ssl_certificate_key /etc/letsencrypt/live/domain.com.br/privkey.pem;
 
-    location / {
-        proxy_pass http://odoo:8069;
-        proxy_redirect off;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+      location / {
+          proxy_pass http://odoo:8069;
+          proxy_redirect off;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
 
-        # Configurações adicionais de proxy, se necessário
-    }
+          # Configurações adicionais de proxy, se necessário
+      }
 
-    location ~ /.well-known/acme-challenge/ {
-            root /var/www/certbot;
-    }
+      location ~ /.well-known/acme-challenge/ {
+              root /var/www/certbot;
+      }
 
-    error_page 500 502 503 504 /50x.html;
-    location = /50x.html {
-        root /usr/share/nginx/html;
-    }
-}
+      error_page 500 502 503 504 /50x.html;
+      location = /50x.html {
+          root /usr/share/nginx/html;
+      }
+  }
 
 ##  Documentation 📜
 
